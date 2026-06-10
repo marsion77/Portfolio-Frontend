@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { HiArrowDown } from 'react-icons/hi';
+import { FaGithub, FaLinkedin, FaFileDownload } from 'react-icons/fa';
 
 const Hero = () => {
   // Stagger variants for titles
@@ -93,7 +94,7 @@ const Hero = () => {
         </motion.p>
 
         {/* Buttons / Actions */}
-        <motion.div variants={itemVariants} className="flex gap-4 sm:flex-row flex-col">
+        <motion.div variants={itemVariants} className="flex gap-4 sm:flex-row flex-col items-center justify-center">
           <motion.a
             href="#projects"
             whileHover={{ scale: 1.05 }}
@@ -109,6 +110,41 @@ const Hero = () => {
             className="px-8 py-4 rounded-xl font-semibold text-slate-200 hover:text-white border border-slate-800/80 glass hover:bg-slate-900/50 transition duration-300"
           >
             Let's Talk
+          </motion.a>
+          <motion.a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05, borderColor: 'rgba(56, 189, 248, 0.6)' }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-4 rounded-xl font-semibold text-accent-cyan hover:text-white border border-accent-cyan/30 glass flex items-center gap-2 transition duration-300 group"
+          >
+            <FaFileDownload className="text-xl group-hover:-translate-y-1 transition-transform" />
+            Resume
+          </motion.a>
+        </motion.div>
+
+        {/* Social Icons */}
+        <motion.div variants={itemVariants} className="flex gap-6 mt-8">
+          <motion.a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.2, rotate: 5, filter: "drop-shadow(0 0 8px rgba(56, 189, 248, 0.8))" }}
+            whileTap={{ scale: 0.9 }}
+            className="text-slate-400 hover:text-accent-cyan transition-colors duration-300"
+          >
+            <FaGithub className="w-8 h-8" />
+          </motion.a>
+          <motion.a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.2, rotate: -5, filter: "drop-shadow(0 0 8px rgba(168, 85, 247, 0.8))" }}
+            whileTap={{ scale: 0.9 }}
+            className="text-slate-400 hover:text-accent-purple transition-colors duration-300"
+          >
+            <FaLinkedin className="w-8 h-8" />
           </motion.a>
         </motion.div>
       </motion.div>
